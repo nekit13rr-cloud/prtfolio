@@ -97,3 +97,164 @@ textarea{min-height:120px; resize:vertical}
   .features, .cards, .prices, .reviews{grid-template-columns:1fr}
   .hero__text h1{font-size:32px}
 }
+/* Переключатель недель */
+.toggle{display:flex; align-items:center; gap:10px; justify-content:center; margin:10px 0 22px}
+.toggle__label{color:var(--muted); font-weight:600}
+.switch{position:relative; display:inline-block; width:54px; height:28px}
+.switch input{opacity:0; width:0; height:0}
+.slider{position:absolute; cursor:pointer; top:0; left:0; right:0; bottom:0; background:#333; transition:.2s; border-radius:999px}
+.slider:before{position:absolute; content:""; height:22px; width:22px; left:3px; bottom:3px; background:white; transition:.2s; border-radius:50%}
+.switch input:checked + .slider{background:linear-gradient(135deg,var(--brand),var(--brand2))}
+.switch input:checked + .slider:before{transform:translateX(26px)}
+
+/* Карусель отзывов */
+.reviews{position:relative; display:flex; align-items:center; gap:10px}
+.carousel{overflow:hidden; width:100%}
+.carousel__btn{background:transparent; color:#fff; border:1px solid rgba(255,255,255,.2); width:36px; height:36px; border-radius:10px}
+.carousel .review{min-width:100%;}
+
+/* Липкая CTA (мобилки) */
+.sticky-cta{position:fixed; left:0; right:0; bottom:12px; display:none; justify-content:center; z-index:60}
+.sticky-cta .btn{box-shadow:0 8px 20px rgba(0,0,0,.35)}
+@media (max-width: 640px){
+  .sticky-cta{display:flex}
+}
+/* Карусель отзывов */
+.reviews{ position:relative; display:flex; align-items:center; gap:10px; }
+.carousel{ overflow:hidden; width:100%; }
+.carousel__btn{
+  background:transparent; color:#fff; border:1px solid rgba(255,255,255,.25);
+  width:36px; height:36px; border-radius:10px; cursor:pointer;
+}
+#reviewsTrack{ display:flex; transition:transform .3s ease; will-change: transform; }
+#reviewsTrack .review{
+  min-width:100%; background:var(--card);
+  border:1px solid rgba(255,255,255,.06); border-radius:14px; padding:16px;
+}
+
+.dots{ display:flex; gap:6px; justify-content:center; margin-top:12px; }
+.dots button{
+  width:8px; height:8px; border-radius:999px; border:none; background:#666; opacity:.6;
+}
+.dots button.active{ background:linear-gradient(135deg,var(--brand),var(--brand2)); opacity:1; }
+
+@media (max-width: 640px){
+  .carousel__btn{ width:32px; height:32px; }
+}
+/* FIX: карусель отзывов */
+.reviews{ position:relative; display:flex; align-items:center; gap:10px; }
+
+.carousel{ position:relative; overflow:hidden; width:100%; }
+
+#reviewsTrack{
+  display:flex;
+  gap:0;                 /* важно: без промежутков между слайдами */
+  transform:translateX(0);
+  transition:transform .3s ease;
+  will-change: transform;
+}
+
+#reviewsTrack .review{
+  margin:0;              /* сбрасываем дефолтный margin у figure */
+  min-width:100%;        /* ровно одна ширина вьюпорта карусели */
+  box-sizing:border-box; /* учитываем паддинги внутри ширины */
+  background:var(--card);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:14px;
+  padding:16px;
+}
+
+.carousel__btn{
+  background:transparent; color:#fff; cursor:pointer;
+  border:1px solid rgba(255,255,255,.25);
+  width:36px; height:36px; border-radius:10px;
+}
+
+.dots{ display:flex; gap:6px; justify-content:center; margin-top:12px; }
+.dots button{
+  width:8px; height:8px; border-radius:999px; border:none; background:#666; opacity:.6;
+}
+.dots button.active{ background:linear-gradient(135deg,var(--brand),var(--brand2)); opacity:1; }
+
+@media (max-width:640px){
+  .carousel__btn{ width:32px; height:32px; }
+}
+/* Карусель отзывов — базовые стили */
+.reviews{ position:relative; display:flex; align-items:center; gap:10px; }
+.carousel{ overflow:hidden; width:100%; }
+.carousel__btn{
+  background:transparent; color:#fff; border:1px solid rgba(255,255,255,.25);
+  width:36px; height:36px; border-radius:10px; cursor:pointer;
+}
+#reviewsTrack{
+  display:flex; gap:0; transition:transform .3s ease; will-change: transform;
+}
+#reviewsTrack .review{
+  margin:0;            /* сброс у figure */
+  min-width:100%;      /* один слайд за раз */
+  box-sizing:border-box;
+  background:var(--card);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:14px; padding:16px;
+}
+.dots{ display:flex; gap:6px; justify-content:center; margin-top:12px; }
+.dots button{ width:8px; height:8px; border-radius:999px; border:none; background:#666; opacity:.6; }
+.dots button.active{ background:linear-gradient(135deg,var(--brand),var(--brand2)); opacity:1; }
+@media (max-width:640px){ .carousel__btn{ width:32px; height:32px; } }
+/* === Reviews Carousel (rc-*) — изолированные стили === */
+.rc{position:relative; display:flex; align-items:center; gap:10px}
+.rc__btn{
+  background:transparent; color:#fff; border:1px solid rgba(255,255,255,.25);
+  width:36px; height:36px; border-radius:10px; cursor:pointer; user-select:none
+}
+.rc__viewport{overflow:hidden; width:100%}
+.rc__track{display:flex; gap:0; transform:translateX(0); transition:transform .3s ease; will-change:transform}
+.rc__slide{
+  margin:0; /* сброс margin у figure */
+  min-width:100%;
+  background:var(--card);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:14px; padding:16px; box-sizing:border-box
+}
+.rc__dots{display:flex; gap:6px; justify-content:center; margin-top:12px}
+.rc__dots button{
+  width:8px; height:8px; border-radius:999px; border:none; background:#666; opacity:.6; cursor:pointer
+}
+.rc__dots button.rc--active{background:linear-gradient(135deg,var(--brand),var(--brand2)); opacity:1}
+
+@media (max-width:640px){
+  .rc__btn{width:32px; height:32px}
+}
+/* фон при скролле */
+.nav.scrolled { 
+  background: rgba(11,12,18,.85);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  transition: background .3s;
+}
+
+/* кнопка справа */
+.nav__cta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* активные ссылки */
+.nav__link.active {
+  color: #fff;
+  font-weight: 700;
+  position: relative;
+}
+.nav__link.active::after {
+  content: "";
+  position: absolute;
+  bottom: -4px; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--brand), var(--brand2));
+  border-radius: 2px;
+}
+
+/* бургер анимация */
+.burger.is-open span:nth-child(1){ transform: translateY(8px) rotate(45deg); }
+.burger.is-open span:nth-child(2){ opacity:0; }
+.burger.is-open span:nth-child(3){ transform: translateY(-8px) rotate(-45deg); }
