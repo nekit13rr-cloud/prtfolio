@@ -1,167 +1,191 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Фотограф — Портфолио и услуги</title>
-  <meta name="description" content="Портфолио фотографа: портреты, события, бизнес. Онлайн-запись и примеры работ." />
-  <meta name="theme-color" content="#0c0d11" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Nikita Photo — портфолио фотографа</title>
+  <meta name="description" content="Портреты, события и контент для брендов. Живая фотография с вниманием к свету и деталям."/>
+  <meta name="theme-color" content="#0b0b0c"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <!-- Навбар -->
+  <!-- NAV -->
   <header class="nav">
     <div class="container nav__wrap">
-      <a href="#" class="logo">N<span>Photo</span></a>
-      <nav class="nav__links" id="navLinks">
-        <a class="nav__link" href="#work">Портфолио</a>
-        <a class="nav__link" href="#services">Услуги</a>
-        <a class="nav__link" href="#about">Обо мне</a>
-        <a class="nav__link" href="#contact">Контакты</a>
+      <a class="brand" href="#home" aria-label="На главную">
+        <span class="brand__mark">NP</span>
+        <span class="brand__text">Nikita&nbsp;Photo</span>
+      </a>
+      <nav class="links" id="navLinks">
+        <a class="link" href="#work">Работы</a>
+        <a class="link" href="#clients">Клиенты</a>
+        <a class="link" href="#services">Услуги</a>
+        <a class="link" href="#about">Обо мне</a>
         <a class="btn btn--ghost" href="#contact">Записаться</a>
       </nav>
-      <button class="burger" id="burger" aria-label="Открыть меню"><span></span><span></span><span></span></button>
+      <button class="burger" id="burger" aria-label="Открыть меню">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
-  <!-- Герой -->
-  <section class="hero">
-    <div class="container hero__grid">
-      <div>
-        <h1>Фотограф для людей и бизнеса</h1>
-        <p class="lead">Портреты, события и контент для брендов. Снимаю естественно, с вниманием к свету и деталям.</p>
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="container hero__wrap">
+      <div class="hero__text">
+        <h1 class="h1">Живая фотография<br><span class="accent">для людей и брендов</span></h1>
+        <p class="lead">Портреты, события и контент-съёмка. Естественный свет, чистая композиция, внимание к деталям.</p>
         <div class="cta">
-          <a class="btn" href="#work">Смотреть работы</a>
-          <a class="btn btn--ghost" href="#contact">Связаться</a>
+          <a class="btn" href="#work">Смотреть портфолио</a>
+          <a class="btn btn--ghost" href="#contact">Обсудить задачу</a>
         </div>
       </div>
-      <div class="hero__media">
-        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1514512364185-4c2b3463c274?q=80&w=1400&auto=format&fit=crop" alt="Фотосъёмка"/>
+      <div class="hero__shot">
+        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1400&auto=format&fit=crop" alt="Процесс съёмки" loading="lazy"/>
       </div>
     </div>
   </section>
 
-  <!-- Портфолио -->
+  <!-- WORK (Masonry) -->
   <section id="work" class="section">
     <div class="container">
-      <div class="section__head">
-        <h2>Портфолио</h2>
+      <div class="head">
+        <h2>Работы</h2>
         <div class="filters" id="filters">
           <button class="chip active" data-filter="all">Все</button>
           <button class="chip" data-filter="portrait">Портрет</button>
           <button class="chip" data-filter="event">События</button>
-          <button class="chip" data-filter="brand">Бизнес</button>
+          <button class="chip" data-filter="brand">Бренды</button>
         </div>
       </div>
 
-      <div class="grid" id="grid">
-        <!-- 12 фоток: заменяй ссылками на свои -->
-        <!-- категория указывается в data-cat -->
-        <figure class="item" data-cat="portrait">
-          <img src="https://images.unsplash.com/photo-1503342394125-4802590a9125?q=80&w=1200&auto=format&fit=crop" alt="Портрет 1" loading="lazy"/>
+      <!-- Masonry columns -->
+      <div class="masonry" id="masonry">
+        <!-- data-cat задаёт категорию -->
+        <figure class="ph" data-cat="portrait">
+          <img src="https://images.unsplash.com/photo-1503342394125-4802590a9125?q=80&w=1400&auto=format&fit=crop" alt="Портрет"/>
+          <figcaption>Портрет</figcaption>
         </figure>
-        <figure class="item" data-cat="portrait">
-          <img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?q=80&w=1200&auto=format&fit=crop" alt="Портрет 2" loading="lazy"/>
+        <figure class="ph" data-cat="event">
+          <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1400&auto=format&fit=crop" alt="Событие"/>
+          <figcaption>Событие</figcaption>
         </figure>
-        <figure class="item" data-cat="event">
-          <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1200&auto=format&fit=crop" alt="Событие 1" loading="lazy"/>
+        <figure class="ph" data-cat="brand">
+          <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1400&auto=format&fit=crop" alt="Контент для бренда"/>
+          <figcaption>Бренд</figcaption>
         </figure>
-        <figure class="item" data-cat="brand">
-          <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1200&auto=format&fit=crop" alt="Бренд 1" loading="lazy"/>
+        <figure class="ph" data-cat="portrait">
+          <img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?q=80&w=1400&auto=format&fit=crop" alt="Портрет"/>
+          <figcaption>Портрет</figcaption>
         </figure>
-        <figure class="item" data-cat="brand">
-          <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1200&auto=format&fit=crop" alt="Бренд 2" loading="lazy"/>
+        <figure class="ph" data-cat="brand">
+          <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1400&auto=format&fit=crop" alt="Контент"/>
+          <figcaption>Бренд</figcaption>
         </figure>
-        <figure class="item" data-cat="event">
-          <img src="https://images.unsplash.com/photo-1521335629791-ce4aec67dd47?q=80&w=1200&auto=format&fit=crop" alt="Событие 2" loading="lazy"/>
+        <figure class="ph" data-cat="event">
+          <img src="https://images.unsplash.com/photo-1521335629791-ce4aec67dd47?q=80&w=1400&auto=format&fit=crop" alt="Событие"/>
+          <figcaption>Событие</figcaption>
         </figure>
-        <figure class="item" data-cat="portrait">
-          <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38?q=80&w=1200&auto=format&fit=crop" alt="Портрет 3" loading="lazy"/>
+        <figure class="ph" data-cat="portrait">
+          <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38?q=80&w=1400&auto=format&fit=crop" alt="Портрет"/>
+          <figcaption>Портрет</figcaption>
         </figure>
-        <figure class="item" data-cat="portrait">
-          <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?q=80&w=1200&auto=format&fit=crop" alt="Портрет 4" loading="lazy"/>
+        <figure class="ph" data-cat="brand">
+          <img src="https://images.unsplash.com/photo-1502389614483-e475fc34407e?q=80&w=1400&auto=format&fit=crop" alt="Предметная"/>
+          <figcaption>Бренд</figcaption>
         </figure>
-        <figure class="item" data-cat="brand">
-          <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1200&auto=format&fit=crop" alt="Бренд 3" loading="lazy"/>
-        </figure>
-        <figure class="item" data-cat="event">
-          <img src="https://images.unsplash.com/photo-1464349321740-5f5b02e1ad29?q=80&w=1200&auto=format&fit=crop" alt="Событие 3" loading="lazy"/>
-        </figure>
-        <figure class="item" data-cat="portrait">
-          <img src="https://images.unsplash.com/photo-1516571137133-1be29e37143a?q=80&w=1200&auto=format&fit=crop" alt="Портрет 5" loading="lazy"/>
-        </figure>
-        <figure class="item" data-cat="brand">
-          <img src="https://images.unsplash.com/photo-1502389614483-e475fc34407e?q=80&w=1200&auto=format&fit=crop" alt="Бренд 4" loading="lazy"/>
+        <figure class="ph" data-cat="event">
+          <img src="https://images.unsplash.com/photo-1464349321740-5f5b02e1ad29?q=80&w=1400&auto=format&fit=crop" alt="Событие"/>
+          <figcaption>Событие</figcaption>
         </figure>
       </div>
     </div>
   </section>
 
-  <!-- Услуги -->
-  <section id="services" class="section section--alt">
+  <!-- CLIENTS -->
+  <section id="clients" class="section section--alt">
+    <div class="container">
+      <h2>Клиенты и публикации</h2>
+      <ul class="logos">
+        <li>Nordic</li>
+        <li>Studio 12</li>
+        <li>Urban</li>
+        <li>Mother&nbsp;&amp;&nbsp;Sun</li>
+        <li>LightMag</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SERVICES (другая подача, не как тарифы) -->
+  <section id="services" class="section">
     <div class="container">
       <h2>Услуги</h2>
-      <div class="cards">
-        <article class="card">
-          <h3>Портретная съёмка</h3>
-          <p>Индивидуально/пара. 1.5–2 часа, 10–15 обработанных фото.</p>
-          <div class="price">от ₽4 900</div>
+      <div class="svc">
+        <article>
+          <h3>Портретная сессия</h3>
+          <p>1,5–2 часа. Помогу с позированием и референсами. 10–15 снимков с ретушью.</p>
+          <div class="note">от ₽4 900</div>
         </article>
-        <article class="card">
-          <h3>Событие</h3>
-          <p>Мероприятия, концерты, семейные праздники. От 2 часов.</p>
-          <div class="price">от ₽2 500/ч</div>
+        <article>
+          <h3>Съёмка события</h3>
+          <p>Мероприятия, концерты, семейные праздники. Работаю незаметно, ловлю эмоции.</p>
+          <div class="note">от ₽2 500/час</div>
         </article>
-        <article class="card">
+        <article>
           <h3>Контент для бренда</h3>
-          <p>Каталог, соцсети, витрина. Свет, стиль, пост-обработка.</p>
-          <div class="price">от ₽7 900</div>
+          <p>Каталог/соцсети/витрина. Свет, стиль, пост-обработка и выдача в нужных форматах.</p>
+          <div class="note">по брифу</div>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- Обо мне -->
+  <!-- ABOUT -->
   <section id="about" class="section">
-    <div class="container">
-      <h2>Обо мне</h2>
-      <div class="about">
-        <p>Я фотограф, который любит живые эмоции и аккуратный свет. Снимал портреты, семейные съёмки и контент для небольших брендов. Работаю в студии и на улице, помогу с позированием и референсами.</p>
-        <ul>
-          <li>📍 Работаю по городу и в студиях</li>
-          <li>🕒 Готовые фото: 3–7 дней</li>
+    <div class="container about">
+      <div>
+        <h2>Обо мне</h2>
+        <p>Я верю в силу простоты: чистый свет, честные эмоции и аккуратная пост-обработка. Снимаю в студии и на улице, работаю во всех жанрах выше.</p>
+        <ul class="facts">
+          <li>📍 Работаю по городу, студии по договорённости</li>
+          <li>🕒 Отдача материала: 3–7 дней</li>
           <li>🧾 Договор/чек по запросу</li>
         </ul>
       </div>
+      <div class="about__shot">
+        <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=1200&auto=format&fit=crop" alt="Бэкстейдж"/>
+      </div>
     </div>
   </section>
 
-  <!-- Контакты -->
-  <section id="contact" class="section">
+  <!-- CONTACT -->
+  <section id="contact" class="section section--alt">
     <div class="container">
-      <h2>Записаться</h2>
-      <form class="form" id="contactForm" action="" method="POST">
-        <input type="text" name="name" placeholder="Имя" required />
-        <input type="email" name="email" placeholder="Email" required />
+      <h2>Запись</h2>
+      <form id="contactForm" class="form">
+        <input type="text" name="name" placeholder="Имя" required/>
+        <input type="email" name="email" placeholder="Email" required/>
         <textarea name="msg" placeholder="Коротко опишите задачу" required></textarea>
         <button class="btn" type="submit">Отправить</button>
-        <p class="hint">Форма демо. Для быстрого ответа — <a href="https://t.me/your_handle" target="_blank">Telegram</a>.</p>
+        <p class="hint">Форма демо. Для быстрого ответа — <a href="https://t.me/your_handle" target="_blank" rel="noopener">Telegram</a>.</p>
       </form>
     </div>
   </section>
 
-  <!-- Лайтбокс -->
+  <!-- LIGHTBOX -->
   <div class="lightbox" id="lightbox" aria-hidden="true">
-    <button class="lightbox__close" id="lbClose" aria-label="Закрыть">×</button>
-    <img id="lbImg" alt="Просмотр" />
+    <div class="lightbox__inner">
+      <button class="lightbox__close" id="lbClose" aria-label="Закрыть">×</button>
+      <img id="lbImg" alt="Просмотр работы"/>
+    </div>
   </div>
 
   <footer class="footer">
     <div class="container footer__wrap">
-      <span>© <span id="year"></span> NPhoto</span>
+      <span>© <span id="year"></span> Nikita Photo</span>
       <a class="btn btn--ghost" href="#contact">Связаться</a>
     </div>
   </footer>
