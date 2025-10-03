@@ -1,53 +1,199 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Фитнес-тренер Иван</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Фитнес-тренер Иван — персональные тренировки</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Персональные тренировки, онлайн-курс и планы питания. Первая консультация — бесплатно." />
+  <meta name="theme-color" content="#0e0f13" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+  <meta property="og:title" content="Фитнес-тренер Иван" />
+  <meta property="og:description" content="Персональные тренировки и онлайн-поддержка." />
+  <meta property="og:type" content="website" />
 </head>
 <body>
-  <header>
-    <h1>Фитнес-тренер Иван</h1>
-    <p>Персональные тренировки и онлайн-курсы</p>
-    <nav>
-      <a href="#about">Обо мне</a>
-      <a href="#services">Услуги</a>
-      <a href="#contact">Контакты</a>
-    </nav>
+  <!-- Навбар -->
+  <header class="nav">
+    <div class="container nav__wrap">
+      <a href="#" class="logo">Fitness<span>Coach</span></a>
+      <nav class="nav__links" id="navLinks">
+        <a href="#about">Обо мне</a>
+        <a href="#services">Услуги</a>
+        <a href="#pricing">Тарифы</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact" class="btn btn--ghost">Записаться</a>
+      </nav>
+      <button class="burger" id="burger" aria-label="Открыть меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </header>
 
-  <section id="about">
-    <h2>Обо мне</h2>
-    <p>Я сертифицированный тренер с опытом более 5 лет. Помогаю людям достигать целей: похудеть, набрать массу, укрепить здоровье. Индивидуальный подход и поддержка на каждом этапе.</p>
-  </section>
-
-  <section id="services">
-    <h2>Услуги</h2>
-    <div class="services">
-      <div class="card">
-        <h3>Индивидуальные тренировки</h3>
-        <p>План занятий под ваши цели и уровень подготовки.</p>
+  <!-- Герой -->
+  <section class="hero">
+    <div class="container hero__grid">
+      <div class="hero__text">
+        <h1>Фитнес-тренер Иван</h1>
+        <p class="lead">Персональные тренировки + питание + поддержка в Telegram. Доведу до результата без перегруза.</p>
+        <div class="cta">
+          <a class="btn" href="#pricing">Выбрать тариф</a>
+          <a class="btn btn--ghost" href="https://t.me/your_handle" target="_blank" rel="noopener">Написать в Telegram</a>
+        </div>
+        <ul class="bullets">
+          <li>🎯 Индивидуальный план</li>
+          <li>📲 Еженедельная обратная связь</li>
+          <li>🧠 Техника и безопасность</li>
+        </ul>
       </div>
-      <div class="card">
-        <h3>Онлайн-курс</h3>
-        <p>Комплекс упражнений с видео и поддержкой в чате.</p>
-      </div>
-      <div class="card">
-        <h3>Питание</h3>
-        <p>Программы питания для набора массы или похудения.</p>
+      <div class="hero__media">
+        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1400&auto=format&fit=crop" alt="Тренировки в зале" />
       </div>
     </div>
   </section>
 
-  <section id="contact" class="cta">
-    <h2>Запишись на консультацию</h2>
-    <a class="btn" href="https://t.me/your_handle" target="_blank">Написать в Telegram</a>
+  <!-- Обо мне -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2>Обо мне</h2>
+      <p>Сертифицированный тренер, 5+ лет практики. Помогаю похудеть, набрать массу и стать сильнее. Работаю офлайн и онлайн, делаю акцент на технике выполнения, здоровых привычках и постепенном прогрессе.</p>
+      <div class="features">
+        <div class="feature"><h3>Персонализация</h3><p>План под ваш режим, оборудование и цели.</p></div>
+        <div class="feature"><h3>Поддержка</h3><p>Чат в Telegram, корректировки каждую неделю.</p></div>
+        <div class="feature"><h3>Безопасность</h3><p>Контроль техники, профилактика травм.</p></div>
+      </div>
+    </div>
   </section>
 
-  <footer>
-    © 2025 Фитнес-тренер Иван. Все права защищены.
+  <!-- Услуги -->
+  <section id="services" class="section section--alt">
+    <div class="container">
+      <h2>Услуги</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Индивидуальные тренировки</h3>
+          <p>Зал/дом. Коррекция техники, план на 4–8 недель.</p>
+        </article>
+        <article class="card">
+          <h3>Онлайн-ведение</h3>
+          <p>План + питание + еженедельная связь. Удобно из любой точки.</p>
+        </article>
+        <article class="card">
+          <h3>Питание</h3>
+          <p>Гибкий рацион под цели: масса / сушка / здоровье.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Тарифы -->
+  <section id="pricing" class="section">
+    <div class="container">
+      <h2>Тарифы</h2>
+      <div class="prices">
+        <div class="price">
+          <div class="price__head">Старт</div>
+          <ul>
+            <li>План на 4 недели</li>
+            <li>1 созвон</li>
+            <li>Чат — базовая поддержка</li>
+          </ul>
+          <div class="price__value">₽3 900</div>
+          <a class="btn" href="https://t.me/your_handle" target="_blank">Выбрать</a>
+        </div>
+        <div class="price price--best">
+          <div class="price__head">Ведение</div>
+          <ul>
+            <li>План на 8 недель</li>
+            <li>Питание + корректировки</li>
+            <li>Еженедельные отчёты</li>
+          </ul>
+          <div class="price__value">₽8 900</div>
+          <a class="btn" href="https://t.me/your_handle" target="_blank">Выбрать</a>
+        </div>
+        <div class="price">
+          <div class="price__head">Премиум</div>
+          <ul>
+            <li>Все из «Ведение»</li>
+            <li>Доп. созвоны</li>
+            <li>Экспресс-ответы 7/7</li>
+          </ul>
+          <div class="price__value">₽14 900</div>
+          <a class="btn" href="https://t.me/your_handle" target="_blank">Выбрать</a>
+        </div>
+      </div>
+      <p class="note">* Первая консультация — бесплатно. Цены можно менять под себя.</p>
+    </div>
+  </section>
+
+  <!-- Отзывы -->
+  <section id="reviews" class="section section--alt">
+    <div class="container">
+      <h2>Отзывы</h2>
+      <div class="reviews">
+        <figure class="review">
+          <blockquote>«За 2 месяца минус 6 кг без голодовок. Нравится подход и поддержка.»</blockquote>
+          <figcaption>— Мария</figcaption>
+        </figure>
+        <figure class="review">
+          <blockquote>«Набрал силу, улучшил технику приседа и тяги. План понятный и без перетренировок.»</blockquote>
+          <figcaption>— Олег</figcaption>
+        </figure>
+        <figure class="review">
+          <blockquote>«Онлайн-ведение идеально под мой график. Каждую неделю корректировки и мотивация.»</blockquote>
+          <figcaption>— Анна</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section">
+    <div class="container">
+      <h2>FAQ</h2>
+      <div class="accordion">
+        <details>
+          <summary>Как проходит первая консультация?</summary>
+          <div>Созвон 15–20 минут, разбираем цели и опыт, даю варианты по формату.</div>
+        </details>
+        <details>
+          <summary>Что, если нет абонемента в зал?</summary>
+          <div>Составлю план для дома: гантели/резинки/вес тела.</div>
+        </details>
+        <details>
+          <summary>Можно ли совмещать с бегом/велом?</summary>
+          <div>Да, скоординируем объём и интенсивность.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Контакты -->
+  <section id="contact" class="section section--contact">
+    <div class="container">
+      <h2>Записаться на консультацию</h2>
+      <form class="form" id="contactForm">
+        <input type="text" name="name" placeholder="Имя" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <textarea name="msg" placeholder="Цель/вопрос" required></textarea>
+        <button class="btn" type="submit">Отправить</button>
+        <p class="form__hint">Форма демо. Для быстрого ответа — <a href="https://t.me/your_handle" target="_blank">Telegram</a>.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Подвал -->
+  <footer class="footer">
+    <div class="container footer__wrap">
+      <span>© <span id="year"></span> Фитнес-тренер Иван</span>
+      <a href="https://t.me/your_handle" target="_blank" class="btn btn--ghost">Связаться в Telegram</a>
+    </div>
   </footer>
 
   <script src="script.js"></script>
