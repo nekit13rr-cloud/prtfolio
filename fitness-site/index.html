@@ -4,37 +4,60 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Фитнес-тренер Иван — персональные тренировки</title>
-
-  <!-- SEO -->
-  <meta name="description" content="Персональные тренировки, онлайн-курс и планы питания. Первая консультация — бесплатно." />
+  <meta name="description" content="Персональные тренировки, питание и онлайн-ведение. Первая консультация — бесплатно." />
   <meta name="theme-color" content="#0e0f13" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+
+  <!-- Open Graph -->
   <meta property="og:title" content="Фитнес-тренер Иван" />
-  <meta property="og:description" content="Персональные тренировки и онлайн-поддержка." />
+  <meta property="og:description" content="Тренировки и питание под ваш график. Онлайн/офлайн." />
   <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1200&auto=format&fit=crop" />
+
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Schema.org (Person) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Иван",
+    "jobTitle":"Персональный тренер",
+    "url":"https://nekit13rr-cloud.github.io/prtfolio/fitness-site/",
+    "sameAs":["https://t.me/your_handle"]
+  }
+  </script>
 </head>
+
 <body>
   <!-- Навбар -->
-  <header class="nav">
-    <div class="container nav__wrap">
-      <a href="#" class="logo">Fitness<span>Coach</span></a>
-      <nav class="nav__links" id="navLinks">
-        <a href="#about">Обо мне</a>
-        <a href="#services">Услуги</a>
-        <a href="#pricing">Тарифы</a>
-        <a href="#reviews">Отзывы</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact" class="btn btn--ghost">Записаться</a>
-      </nav>
+<header class="nav">
+  <div class="container nav__wrap">
+    <a href="index.html" class="logo" aria-label="На главную">
+  <img src="logo-a.svg" alt="Fitness Coach" height="32">
+</a>
+
+    <nav class="nav__links" id="navLinks">
+      <a class="nav__link" href="#about">Обо мне</a>
+      <a class="nav__link" href="#services">Услуги</a>
+      <a class="nav__link" href="#pricing">Тарифы</a>
+      <a class="nav__link" href="#reviews">Отзывы</a>
+      <a class="nav__link" href="#faq">FAQ</a>
+    </nav>
+
+    <div class="nav__cta">
+      <a href="#contact" class="btn">Записаться</a>
       <button class="burger" id="burger" aria-label="Открыть меню">
         <span></span><span></span><span></span>
       </button>
     </div>
-  </header>
+  </div>
+</header>
+
 
   <!-- Герой -->
   <section class="hero">
@@ -53,7 +76,9 @@
         </ul>
       </div>
       <div class="hero__media">
-        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1400&auto=format&fit=crop" alt="Тренировки в зале" />
+        <img loading="lazy" decoding="async"
+     src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1400&auto=format&fit=crop"
+     alt="Тренировки в зале" />
       </div>
     </div>
   </section>
@@ -96,6 +121,14 @@
   <section id="pricing" class="section">
     <div class="container">
       <h2>Тарифы</h2>
+      <div class="toggle">
+  <span class="toggle__label">4 недели</span>
+  <label class="switch">
+    <input type="checkbox" id="weeksToggle" aria-label="Переключатель длительности тарифа">
+    <span class="slider"></span>
+  </label>
+  <span class="toggle__label">8 недель</span>
+</div>
       <div class="prices">
         <div class="price">
           <div class="price__head">Старт</div>
@@ -133,25 +166,43 @@
   </section>
 
   <!-- Отзывы -->
-  <section id="reviews" class="section section--alt">
-    <div class="container">
-      <h2>Отзывы</h2>
-      <div class="reviews">
-        <figure class="review">
-          <blockquote>«За 2 месяца минус 6 кг без голодовок. Нравится подход и поддержка.»</blockquote>
-          <figcaption>— Мария</figcaption>
-        </figure>
-        <figure class="review">
-          <blockquote>«Набрал силу, улучшил технику приседа и тяги. План понятный и без перетренировок.»</blockquote>
-          <figcaption>— Олег</figcaption>
-        </figure>
-        <figure class="review">
-          <blockquote>«Онлайн-ведение идеально под мой график. Каждую неделю корректировки и мотивация.»</blockquote>
-          <figcaption>— Анна</figcaption>
-        </figure>
+<section id="reviews" class="section section--alt">
+  <div class="container">
+    <h2>Отзывы</h2>
+
+    <div class="rc">
+      <!-- Кнопки -->
+      <button class="rc__btn" id="rcPrev" aria-label="Предыдущий отзыв">‹</button>
+
+      <!-- Видимая область -->
+      <div class="rc__viewport" id="rcViewport">
+        <!-- Лента -->
+        <div class="rc__track" id="rcTrack">
+          <figure class="rc__slide">
+            <blockquote>«За 2 месяца минус 6 кг без голодовок. Нравится подход и поддержка.»</blockquote>
+            <figcaption>— Мария</figcaption>
+          </figure>
+
+          <figure class="rc__slide">
+            <blockquote>«Набрал силу, улучшил технику приседа и тяги. План понятный и без перетренировок.»</blockquote>
+            <figcaption>— Олег</figcaption>
+          </figure>
+
+          <figure class="rc__slide">
+            <blockquote>«Онлайн-ведение идеально под мой график. Каждую неделю корректировки и мотивация.»</blockquote>
+            <figcaption>— Анна</figcaption>
+          </figure>
+        </div>
       </div>
+
+      <button class="rc__btn" id="rcNext" aria-label="Следующий отзыв">›</button>
     </div>
-  </section>
+
+    <div class="rc__dots" id="rcDots" aria-hidden="true"></div>
+  </div>
+</section>
+
+
 
   <!-- FAQ -->
   <section id="faq" class="section">
